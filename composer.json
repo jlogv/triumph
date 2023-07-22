@@ -1,0 +1,22 @@
+{
+    "name": "triumph/triumph",
+    "description": "Triumph is flexible, robust and fast microframework for development and prototyping designed for highload",
+    "type": "library",
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Triumph\\Triumph\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexey Logvinov"
+        }
+    ],
+    "minimum-stability": "alpha"
+}
