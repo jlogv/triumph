@@ -3,7 +3,7 @@
     /**
      * Project: Triumph Framework
      * Class: Strings
-     * Copyright (c) Logvinov Alexey, 2014-2023. All rights reserved.
+     * Copyright (c) Alexey Logvinov, 2014-2023. All rights reserved.
      */
 
     namespace Triumph\Utils;
