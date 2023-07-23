@@ -3,14 +3,15 @@
     "description": "Triumph is flexible, robust and fast microframework for development and prototyping designed for highload",
     "type": "library",
     "require": {
-        "php": ">=8.2"
+        "php": ">=8.2",
+        "ext-mbstring": "*"
     },
     "require-dev": {
     },
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Triumph\\Triumph\\": "src/"
+            "Triumph\\": "src/"
         }
     },
     "authors": [
