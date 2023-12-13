@@ -72,10 +72,21 @@
          */
         protected function normalize(): void
         {
-            if (isset($_GET)) $_GET = Strings::strip_slashes($_GET);
-            if (isset($_POST)) $_POST = Strings::strip_slashes($_POST);
-            if (isset($_REQUEST)) $_REQUEST = Strings::strip_slashes($_REQUEST);
-            if (isset($_COOKIE)) $_COOKIE = Strings::strip_slashes($_COOKIE);
+            if (isset($_GET)) {
+                $_GET = Strings::strip_slashes($_GET);
+            }
+
+            if (isset($_POST)) {
+                $_POST = Strings::strip_slashes($_POST);
+            }
+
+            if (isset($_REQUEST)) {
+                $_REQUEST = Strings::strip_slashes($_REQUEST);
+            }
+
+            if (isset($_COOKIE)) {
+                $_COOKIE = Strings::strip_slashes($_COOKIE);
+            }
         }
 
         /**
@@ -85,10 +96,7 @@
          */
         public static function getURI(): string
         {
-            if (isset($_SERVER['REQUEST_URI']))
-                return urldecode($_SERVER['REQUEST_URI']);
-            else
-                return '';
+            return isset($_SERVER['REQUEST_URI']) ? urldecode($_SERVER['REQUEST_URI']) : '';
         }
 
         /**
@@ -115,10 +123,7 @@
          */
         public static function getReferer(): string
         {
-            if (isset($_SERVER['HTTP_REFERER']))
-                return urldecode($_SERVER['HTTP_REFERER']);
-            else
-                return '';
+            return isset($_SERVER['HTTP_REFERER']) ? urldecode($_SERVER['HTTP_REFERER']) : '';
         }
 
         /**
@@ -131,8 +136,9 @@
             if (isset($_SERVER['REQUEST_URI'])) {
                 $uri = urldecode($_SERVER['REQUEST_URI']);
                 return strtok($uri, '?');
-            } else
+            } else {
                 return '';
+            }
         }
 
         /**
@@ -175,7 +181,7 @@
          * Is param exists in GET or POST
          *
          * @param string $name param name
-         * @return bool is exists
+         * @return bool if exists
          */
         public static function isParamExists(string $name): bool
         {
@@ -383,7 +389,7 @@
          */
         public static function isDeleteMethod(): bool
         {
-            if (self::getMethod() == 'DELETE') return true; else return false;
+            return self::getMethod() == 'DELETE';
         }
 
         /**
